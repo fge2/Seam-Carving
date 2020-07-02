@@ -5,6 +5,7 @@ from PIL import ImageTk, Image
 from SeamCarving import Picture
 import datetime
 import time
+import math
 
 
 class App(tk.Frame):
@@ -22,8 +23,8 @@ class App(tk.Frame):
 
         slider_frame = tk.Frame(self)
         self.resize = tk.Scale(slider_frame, from_=0, to=10000, orient=tk.HORIZONTAL, showvalue=0, length=200)
+        self.max = 10000
         self.resize['command'] = self.get_slider
-        # self.resize['state'] = tk.DISABLED
         self.resize.grid(row=0)
         self.scalelabel = tk.Label(slider_frame, text="100.00%")
         self.scalelabel.grid(row=1)
@@ -61,7 +62,6 @@ class App(tk.Frame):
 
         self.master.geometry("%dx%d" % (self.pic.width, self.pic.height+100))
         self.master.resizable(False, False)
-        # self.resize['state'] = 'normal'
         self.resize.set(10000)
 
     def open_filename(self):
@@ -83,6 +83,9 @@ class App(tk.Frame):
         self.panel.image = im
 
     def get_slider(self, val):
+        if float(val) > self.max:
+            self.resize.set(self.max)
+            val = self.max
         self.scalelabel["text"] = str(float(val)/100) + '%'
         self.new_width = int(float(val)/10000 * self.init_width)
         
@@ -91,6 +94,7 @@ class App(tk.Frame):
             self.update_im()
             return
 
+        self.max = min(self.resize.get(), self.max)
         mask = self.pic.create_mask()
         self.pic.highlight(mask)
         self.update_im()
