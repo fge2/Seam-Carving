@@ -33,16 +33,6 @@ class App(tk.Frame):
         func = tk.Button(self, text='carve', command=self.carve)
         func.grid(row=3)
 
-        '''
-        self.pic = Picture('HJoceanSmall.png')
-        self.init_width = self.pic.width
-        im = cv2.cvtColor(self.pic.im, cv2.COLOR_BGR2RGB)
-        im = Image.fromarray(im)
-        im = ImageTk.PhotoImage(im)
-        self.panel = tk.Label(self, image=im)
-        self.panel.image = im
-        self.panel.grid(row=1, pady=2)
-        '''
         self.panel = tk.Label(self)
         self.open_image('HJoceanSmall.png')
         self.panel.grid(row=1, pady=2)
