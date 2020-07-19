@@ -1,2 +1,5 @@
 default.png
 Broadway_tower.jpg
+__pycache__
+.idea
+.gitignore
