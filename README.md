@@ -12,7 +12,7 @@ python CarveVisualizer.py
 ## Resizing Images
 Below is a resizing demo to 50% of original image width
 
-![](demo.gi)
+![](demo.gif)
 
 We can see that the people, clouds, and mountains in the background are undistorted. Most of the pixels removed were from the sky or ocean, which results in a natural looking resizing of the image. This is a drastic difference than simply shrinking the image by 50% with regular editors.
 
