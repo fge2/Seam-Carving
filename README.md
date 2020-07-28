@@ -7,4 +7,4 @@ The GUI preloads a default image but allows users to upload and save custom imag
 ```
 python CarveVisualizer.py
 ```
-![Default GUI](HJoceanSmall.png)
+![Default GUI](defaultGUI.png)
