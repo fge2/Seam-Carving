@@ -8,3 +8,12 @@ The GUI preloads a default image but allows users to upload and save custom imag
 python CarveVisualizer.py
 ```
 ![Default GUI](defaultGUI.png)
+
+## Resizing Images
+Below is a resizing demo to 50% of original image width
+
+![](demo.gif)
+
+We can see that the people, clouds, and mountains in the background are undistorted. Most of the pixels removed were from the sky or ocean, which results in a natural looking resizing of the image. This is a drastic difference than simply shrinking the image by 50% with regular editors.
+
+![seamcarved](carveddemo.jpg) ![distorted](squeezed.png)
